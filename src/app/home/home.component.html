@@ -1,0 +1,42 @@
+<div class="container">
+    <div>
+      <div id="container-content">
+        <form class="form-inline active-cyan-2 col-4 col-sm-4 px-0 mt-2">
+          <input
+            class="form-control form-control-sm mr-3 w-75 novalidate"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+            name="search"
+            [(ngModel)]="searchText"
+            autocomplete="off"
+          />
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </form>
+        <div id= container-button>
+        <button type="button" class="btn btn-primary" (click)="showAdd()">Adauga echipamente</button>
+      
+        </div>
+        <div class="container-echp">
+        
+          <div class="row pl-5">
+            <ng-container *ngFor=" let echipament of echipamente | searchFilter: { denumire: searchText }; let ind = index">
+              <div class="view col mb-3 mr-3 p-0 hoverable" (click)="showDM(echipament.id)">
+                <img [src]="echipament.image" class="img-fluid z-depth-1 rounded" alt="hoverable"/>
+                <div class="detail">
+                    <p id="p1">{{echipament.denumire}}</p>
+                 
+                  
+                </div>
+              </div>
+              <div class="w-100" *ngIf="ind != 0 && (ind + 1) % 4 == 0"></div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-detail-modal #detailModal></app-detail-modal>
+  <app-add-echipament #addEchp></app-add-echipament>
+
+  

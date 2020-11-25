@@ -1,0 +1,33 @@
+<div bsModal class=" row modal fade" #editAngajat="bs-modal" tabindex="-1" role="dialog" aria-labelledby="editAngajat"
+aria-hidden="true" (onHide)=" this.editAngajatForm.reset();">
+ <div class="col-md-6 col-sm-6 col-lg-8 mx-auto my-4" id="modal">
+   <div class="form-container ">
+   <form class="text-center border border-light p-5" *ngIf="currentAngajat" [formGroup]="editAngajatForm">
+     <p class="h4 mb-4">  Editeaza Angajat</p>
+     <label for="nume">Nume</label>
+     <input type="text"  id="nume" class="form-control mb-4"   formControlName="nume" autocomplete="off" >
+     
+     <label for="telefon">Telefon</label>
+     <input type="number"  id="telefon" class="form-control mb-4"   formControlName="telefon" autocomplete="off" >
+     
+     <label for="job">Job</label>
+     <input type="text"  id="job" class="form-control mb-4"   formControlName="job" autocomplete="off" >
+     
+     <label for="salariu">Salariu</label>
+     <input type="number"  id="salariu" class="form-control mb-4"   formControlName="salariu" autocomplete="off" >
+     
+     
+     <button type="button" block="true" class="btn btn-primary"   (click)="afiseaza();">Submit changes!</button>
+   </form>
+
+     
+
+
+   </div>
+
+     
+
+   
+ </div>
+ 
+</div> 

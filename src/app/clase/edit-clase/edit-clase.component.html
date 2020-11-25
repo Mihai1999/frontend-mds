@@ -1,0 +1,33 @@
+<div bsModal class=" row modal fade" #editClasa="bs-modal" tabindex="-1" role="dialog" aria-labelledby="editClasa"
+ aria-hidden="true" (onHide)=" this.editClasaForm.reset();">
+  <div class="col-md-6 col-sm-6 col-lg-8 mx-auto my-4" id="modal">
+    <div class="form-container ">
+      <p class="h4 mb-4"> Editeaza Clasa</p>
+      <form class="text-center" [formGroup]="editClasaForm"> 
+        
+        <label for="denumire">Denumire</label>
+        <input type="text" id="denumire" class="form-control mb-4" formControlName="denumire" autocomplete="off">
+
+        <label for="antrenorId">Antrenor Id</label>
+        <input type="number" id="antrenorId" class="form-control mb-4" formControlName="antrenorId" autocomplete="off">
+
+        <label for="data">Data</label>
+        <input type="text" id="data" class="form-control mb-4" formControlName="data" autocomplete="off">
+
+        <label for="ora">Ora</label>
+        <input type="text" id="ora" class="form-control mb-4" formControlName="ora" autocomplete="off">
+
+        <label for="durata">Durata</label>
+        <input type="number" id="durata" class="form-control mb-4" formControlName="durata" autocomplete="off">
+
+        <label for="participanti">Lista Participanti</label>
+        <input type="text" id="participanti" class="form-control mb-4" formControlName="participanti" autocomplete="off">
+
+        <button type="button" block="true" class="btn btn-primary"   (click)="afiseaza();">Submit changes!</button>
+      </form>
+      
+     
+    </div>
+
+  </div>
+ </div>

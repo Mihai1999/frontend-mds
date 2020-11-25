@@ -1,0 +1,27 @@
+<div bsModal class="row modal" #addAngajat="bs-modal" tabindex="-1" style="margin-top:200px;">
+  <div class="col-md-6 col-sm-6 col-lg-8 mx-auto my-4" id="modal">
+    <div class="form-container border border-light p-5">
+      <form class="text-center" [formGroup]="addAngajatForm">
+        <input type="text" class="form-control mb-4" placeholder="Nume" formControlName="nume"
+        autocomplete="off">
+        <input type="text" class="form-control mb-4" placeholder="Job" formControlName="job"
+        autocomplete="off">
+        <input type="number" class="form-control mb-4" placeholder="Salariu" formControlName="salariu"
+        autocomplete="off">
+        <input type="number" class="form-control mb-4" placeholder="Telefon" formControlName="telefon"
+        autocomplete="off">
+
+      </form>
+     
+ 
+      <div class = "container-button">
+        <button type="button" class="btn btn-danger" (click)="hide()">Exit</button>
+        <button type="button" class="btn btn-success" (click)="add()" [disabled]="addAngajatForm.invalid" >Add</button>
+        
+      </div>
+    </div>
+    <p *ngIf="succes" style="color: green; font-size: 22px;"> Echipament adaugat cu succes!</p>
+      <p *ngIf="succes === false" style="color: red; font-size: 22px;">Ceva nu este bine.</p>
+    
+  </div>
+</div>

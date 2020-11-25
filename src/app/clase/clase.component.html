@@ -1,0 +1,54 @@
+<div class="container">
+  <div id= container-button>
+    <button type="button" class="btn btn-primary" (click)="this.showAdd()">Adauga clasa</button>
+  
+    </div>
+    <div id= container-button>
+      <button type="button"  (click)="afiseaza();">Afiseaza participanti</button>
+    
+      </div>
+  <div class="row">
+    
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="width:7%">Actions</th>
+          <th scope="col" style="width:7%">Id</th>
+          <th scope="col" style="width:10%">Denumire</th>
+          <th scope="col" style="width:10%">Start Date</th>
+          <th scope="col" style="width:10%"> End Date</th>
+          <th scope="col" style="width:10%">Antrenor</th>
+          <th scope="col" style="width:30%">Lista Participanti</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="listaClase">
+        <tr *ngFor="let clasa of listaClase; let i = index">
+          <td>
+            <a class=" dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"></a>
+
+       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+         <a class="dropdown-item" (click)="showEdit(clasa.id);"><i class="fas fa-pen"></i> Edit</a>
+         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" (click)="deleteClasa(clasa.id)"><i class="fas fa-eraser"></i> Delete</a>
+       </div>
+
+          </td>
+          <td>{{clasa.id}}</td>
+          <td>{{clasa.denumire}}</td>
+          <td>{{clasa.startDate}}</td>
+          <td>{{clasa.endDate}}</td>
+          <td>{{angajati[i].nume}}</td>
+          <td class="participanti"></td>
+
+          
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+</div>
+
+<app-add-clase #addClasa></app-add-clase>
+<app-edit-clase #editClasa></app-edit-clase>

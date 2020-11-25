@@ -1,0 +1,43 @@
+ <div bsModal class=" row modal fade" #editClient="bs-modal" tabindex="-1" role="dialog" aria-labelledby="editClient"
+ aria-hidden="true" (onHide)=" this.editClientForm.reset();">
+  <div class="col-md-6 col-sm-6 col-lg-8 mx-auto my-4" id="modal">
+    <div class="form-container ">
+    <form class="text-center border border-light p-5" *ngIf="currentClient.client && currentClient.abonament" [formGroup]="editClientForm">
+      <p class="h4 mb-4">  Editeaza Client</p>
+      <label for="nume">Nume</label>
+      <input type="text"  id="nume" class="form-control mb-4"   formControlName="nume" autocomplete="off" >
+      
+      <label for="prenume">Prenume</label>
+      <input type="text"  id="prenume" class="form-control mb-4"   formControlName="prenume" autocomplete="off" >
+      
+      <label for="email">Email</label>
+      <input type="text"  id="email" class="form-control mb-4"   formControlName="email" autocomplete="off" >
+      
+      <label for="telefon">Telefon</label>
+      <input type="number"  id="telefon" class="form-control mb-4"   formControlName="telefon" autocomplete="off" >
+      
+      <label for="idAntrenori">Id Antrenori</label>
+      <input type="text"  id="idAntrenori" class="form-control mb-4"   formControlName="idAntrenori" autocomplete="off" >
+      
+      <label for="idClase">Id Clase</label>
+      <input type="text"  id="idClase" class="form-control mb-4"   formControlName="idClase" autocomplete="off" >
+      
+      <label for="denumire">Denumire</label>
+      <input type="text"  id="Denumire" class="form-control mb-4"   formControlName="denumire" autocomplete="off" >
+
+      <label for="pret">Pret</label>
+      <input type="number"  id="pret" class="form-control mb-4"   formControlName="pret" autocomplete="off" >
+      <button type="button" block="true" class="btn btn-primary"   (click)="afiseaza();">Submit changes!</button>
+    </form>
+ 
+      
+
+
+    </div>
+
+      
+
+    
+  </div>
+  
+</div> 

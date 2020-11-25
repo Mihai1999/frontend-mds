@@ -1,0 +1,24 @@
+<div bsModal class="row modal" #addAntrenor="bs-modal" tabindex="-1" style="margin-top:200px;">
+  <div class="col-md-6 col-sm-6 col-lg-8 mx-auto my-4" id="modal">
+    <div class="form-container border border-light p-5">
+      
+      <form class="text-center" [formGroup]="addAntrenorForm">
+        <input type="number" class="form-control mb-4" placeholder="Angajat Id" formControlName="angajatId"
+        autocomplete="off">
+        <input type="text" class="form-control mb-4" placeholder="AntrenorClient Id" formControlName="antrenoClientId"
+        autocomplete="off">
+      
+      </form>
+ 
+      <div class = "container-button">
+        <button type="button" class="btn btn-danger" (click)="hide()">Exit</button>
+        <button type="button" class="btn btn-success" (click)="add()" [disabled]="addAntrenorForm.invalid" >Add</button>
+        
+      </div>
+    </div>
+    <p *ngIf="succes" style="color: green; font-size: 22px;"> Echipament adaugat cu succes!</p>
+      <p *ngIf="succes === false" style="color: red; font-size: 22px;">Ceva nu este bine.</p>
+    
+  </div>
+</div>
+

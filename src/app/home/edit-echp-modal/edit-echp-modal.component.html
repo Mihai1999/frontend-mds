@@ -1,0 +1,20 @@
+<div bsModal class=" row modal fade" tabindex="-1" #editEchpModal="bs-modal" role="dialog" aria-labelledby="editEchpModal"
+     aria-hidden="true" (onHide)=" this.editEchpForm.reset();">
+  <div class="col-md-6 col-sm-6 col-lg-4 mx-auto my-4" *ngIf="editEchpForm">
+    <form class="text-center border border-light p-5" [formGroup]="editEchpForm">
+
+      <p class="h4 mb-4">Editeaza echipament</p>
+
+      <label for="denumire">Denumire</label>
+      <input type="text" id="denumire" class="form-control mb-4" formControlName="denumire" autocomplete="off">
+      <label for="marca">Marca</label>
+      <input type="text" id="marca" class="form-control mb-4" formControlName="marca" autocomplete="off">
+      <label for="pret">pret</label>
+      <input type="text" id="pret" class="form-control mb-4" formControlName="pret" autocomplete="off">
+      <label for="imgUrl">Img Url</label>
+      <input type="text" id="imgUrl" class="form-control mb-4" formControlName="imgUrl" autocomplete="off">
+      <button type="button" block="true" [disabled]="!this.editEchpForm.valid || this.editEchpForm.pristine" class="btn btn-primary" (click)="editEchipament()">Submit changes</button>
+    </form>
+
+  </div>
+</div>

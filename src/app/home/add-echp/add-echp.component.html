@@ -1,0 +1,25 @@
+<div bsModal class=" row modal fade" #addEchp="bs-modal" tabindex="-1" style="margin-top:200px;">
+  <div class="col-md-6 col-sm-6 col-lg-8 mx-auto my-4" id="modal">
+    <div class="form-container border">
+      <form class="text-center" [formGroup]="addEchpForm" >
+
+        <p class="h4 mb-4">Adauga echipament</p>
+        <input type="text" class="form-control mb-4" placeholder="Denumire" formControlName="denumire"
+        autocomplete="off">
+        <input type="number" class="form-control mb-4" placeholder="Pret" formControlName="pret"
+        autocomplete="off">
+        <input type="text" class="form-control mb-4" placeholder="Brand" formControlName="brand"
+        autocomplete="off">
+        <input type="text" class="form-control mb-4" placeholder="Imagine" formControlName="img"
+        autocomplete="off">
+      </form>
+      <div class = "container-button">
+        <button type="button" class="btn btn-danger" (click)="hide()">Exit</button>
+        <button type="button" class="btn btn-success" (click)="add()" [disabled]="addEchpForm.invalid" >Add</button>
+        
+      </div>
+      <p *ngIf="succes" style="color: green; font-size: 22px;"> Echipament adaugat cu succes!</p>
+      <p *ngIf="succes === false" style="color: red; font-size: 22px;">Ceva nu este bine.</p>
+    </div>
+  </div>
+</div>

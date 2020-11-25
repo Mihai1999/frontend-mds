@@ -1,0 +1,51 @@
+<h1> Lista clienti</h1>
+<div id= container-button>
+  <button type="button" class="btn btn-primary" (click)="this.showAdd()">Adauga clienti</button>
+
+  </div>
+<div class="container">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="width:7%">Actions</th>
+          <th scope="col" style="width:7%">ID</th>
+          <th scope="col" style="width:10%">Nume</th>
+          <th scope="col" style="width:10%">Prenume</th>
+          <th scope="col" style="width:13%">Telefon</th>
+          <th scope="col" style="width:10%">Email</th>
+          <th scope="col" style="width:10%">Abonament</th>
+          <th scope="col" style="width:10%">Start Date</th>
+          <th scope="col" style="width:10%">End Date</th>
+          <th scope="col" style="width:20%">Nume Antrenori</th>
+        </tr>
+      </thead>
+      <tbody>
+
+         <tr *ngFor="let c of clientDetail; let i = index ">
+          <td><a class=" dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"></a>
+
+       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+         <a class="dropdown-item" (click)="this.showEdit(c.client.id);"><i class="fas fa-pen"></i> Edit</a>
+         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" (click)="delete(c.client.id)"><i class="fas fa-eraser"></i> Delete</a>
+       </div>
+     </td>
+          <td scope="row">{{c.client.id}}</td>
+          
+          <td> {{c.client.nume}}</td>
+          <td> {{c.client.prenume}}</td>
+          <td> {{c.client.telefon}}</td>
+          <td> {{c.client.email}}</td>
+          <td> {{c.abonament.denumire}}</td>
+          <td> {{c.abonament.start_date}}</td>
+          <td> {{c.abonament.end_date}}</td>  
+          <td id="antrenori"> {{c.numeAntrenori.slice(2)}} </td> 
+        </tr> 
+
+      </tbody>
+    </table>
+</div>
+
+<app-add-client #addClient></app-add-client> 
+<app-edit-client #editClient></app-edit-client>

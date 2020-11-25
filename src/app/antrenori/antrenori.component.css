@@ -1,0 +1,57 @@
+.container {
+  max-width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.continut{
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  margin: 20px;
+
+}
+
+#numar{
+  padding-top: 17%;
+}
+
+h1 {
+  color: black;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+ 
+}
+
+th {
+  text-align: center;
+}
+
+td#antrenor-info{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  font-size: xx-large;
+
+}
+
+td#antrenor-info div{
+  padding-top: 20px;
+}
+
+#container-button{
+  max-width: 100%;
+  text-align: center;
+  padding-top: 40px;
+}

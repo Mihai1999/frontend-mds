@@ -1,0 +1,34 @@
+#modal {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+
+#text {
+  font-size: 25px;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  border-bottom: none;
+  padding-top: 5px;
+}
+
+input[type='radio'] {
+transform: scale(1.5);
+margin-right: 5px;
+}
+
+.form-container {
+  max-width: 35%;
+  text-align: center;
+  margin: auto;
+  border-top-color: white !important;
+  padding-bottom: 3rem;
+}
+
+form {
+  padding: 3rem;
+padding-bottom: 0;
+}
